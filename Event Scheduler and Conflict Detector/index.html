@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Scheduler</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        .event-form, .events-list, .conflicts-list {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+        }
+        .event-form h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .event-form label {
+            font-size: 16px;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .event-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .event-form button {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .event-form button:hover {
+            background-color: #4cae4c;
+        }
+        .events-list, .conflicts-list {
+            display: flex;
+            flex-direction: column;
+        }
+        .event-item {
+            background: #f9f9f9;
+            padding: 15px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .event-item.conflict {
+            background: #ffe6e6;
+            border-color: #f44336;
+        }
+        .conflicts-list {
+            color: #d9534f;
+        }
+        .conflicts-list ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .conflicts-list li {
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Event Scheduler</h1>
+    
+    <div class="event-form">
+        <h2>Add New Event</h2>
+        <form id="eventForm">
+            <div>
+                <label for="eventName">Event Name:</label>
+                <input type="text" id="eventName" required placeholder="Enter event name">
+            </div>
+            <div>
+                <label for="startTime">Start Time:</label>
+                <input type="time" id="startTime" required>
+            </div>
+            <div>
+                <label for="endTime">End Time:</label>
+                <input type="time" id="endTime" required>
+            </div>
+            <button type="submit">Add Event</button>
+        </form>
+    </div>
+
+    <div class="events-list">
+        <h2>Scheduled Events</h2>
+        <div id="eventsList"></div>
+    </div>
+
+    <div class="conflicts-list">
+        <h2>Conflicts</h2>
+        <div id="conflictsList"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

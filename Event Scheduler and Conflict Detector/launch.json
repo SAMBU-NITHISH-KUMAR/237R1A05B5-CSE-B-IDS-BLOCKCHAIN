@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",  // This is where your local server runs
+            "webRoot": "${workspaceFolder}",  // This is where your source files are located
+            "runtimeExecutable": "C:/Program Files/Google/Chrome/Application/chrome.exe",  // Path to Chrome, adjust if needed
+            "userDataDir": "${workspaceFolder}/.vscode/chromeUserData",  // Keeps your browser settings isolated
+            "port": 9222,  // Port for the Chrome debugging protocol, if necessary
+            "sourceMaps": true,  // Enables source maps for debugging JavaScript
+            "skipFiles": [
+                "<node_internals>/**"
+            ]  // Skips Node.js internal files for debugging (helpful for frontend debugging)
+        }
+    ]
+}
